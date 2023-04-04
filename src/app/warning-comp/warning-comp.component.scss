@@ -1,0 +1,17 @@
+div{
+    padding: 10px;
+    border: 1.5px solid darkorange;
+    text-align: center;
+    &:hover{
+       background-color: darkorange ; 
+       transition: ease-in-out .26s ;
+        h2{
+            color: white;
+        }
+    }
+
+}
+
+h2{
+    color: darkorange;
+}
