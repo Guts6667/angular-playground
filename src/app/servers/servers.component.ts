@@ -11,6 +11,10 @@ export class ServersComponent implements OnInit {
   serverName = '';
   userName = '';
   serverCreated = false;
+  servers = ['TestServer', 'TestServer2'];
+  displayDetails = false;
+  clicks = [];
+  clickColor = false
   constructor() {
     setTimeout(() => {
       this.allowNewServer = true;
@@ -21,6 +25,7 @@ export class ServersComponent implements OnInit {
     this.serverCreationStatus =
       'Server was created! Name is ' + this.serverName;
     this.serverCreated = true;
+    this.servers.push(this.serverName);
   }
   onUpdateServerName(event: Event) {
     console.log(event);
@@ -28,5 +33,12 @@ export class ServersComponent implements OnInit {
   }
   onUpdateUserName(event: Event) {
     this.userName = (<HTMLInputElement>event.target).value;
+  }
+  displayClicks(event: Event){
+    if(event){
+      this.clicks.push(this.clicks.length +1);
+    }
+
+
   }
 }

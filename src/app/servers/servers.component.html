@@ -17,5 +17,10 @@
         Username</button>
 </div>
 <hr>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
+<button (click)="displayDetails = !displayDetails" (click)="displayClicks($event)" class="btn btn-primary">Display
+    Details</button>
+<p *ngIf="displayDetails == true">Secret Password = tuna</p>
+<div class="d-flex flex-column-reverse">
+    <p *ngFor="let click of clicks" [ngClass]="{'text-primary': click >= 5}"> Button clicked {{click}} times!</p>
+</div>
